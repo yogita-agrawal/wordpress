@@ -5,19 +5,19 @@ files:
     destination: /tmp/WordPress/wordpress
 hooks:
   BeforeInstall:
-    - location: /tmp/WordPress/wordpress/wordpress/install_dependencies.sh
+    - location: /tmp/WordPress/wordpress/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /tmp/WordPress/wordpress/wordpress/change_permissions.sh
+    - location: /tmp/WordPress/wordpress/change_permissions.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /tmp/WordPress/wordpress/wordpress/start_server.sh
+    - location: /tmp/WordPress/wordpress/start_server.sh
     - location: wordpress/create_test_db.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: /tmp/WordPress/wordpress/wordpress/stop_server.sh
+    - location: /tmp/WordPress/wordpress/stop_server.sh
       timeout: 300
       runas: root
